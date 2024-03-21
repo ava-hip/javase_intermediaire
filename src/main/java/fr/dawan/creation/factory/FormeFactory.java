@@ -3,39 +3,26 @@ package fr.dawan.creation.factory;
 
 import java.lang.reflect.InvocationTargetException;
 
-public class FormeFactory {
-/*
+//public class FormeFactory {
 
-    public Forme getForme(String forme, double dimension){
-        switch (forme){
-            case "cercle":
-                return new Cercle(dimension);
-            case "carre" :
-                return new Carre(dimension);
-            default :
-                return null;
-        }
-    }
 
-}
+//    public static Forme getForme(String typeForme,double dimension) {
+//        switch(typeForme) {
+//        case "cercle":
+//            return new Cercle(dimension);
+//        case "carre":
+//            return new Carre(dimension);
+//            default:
+//                return null;
+//        }
+//    }
+//
 
+//public static <T> Forme getForme(Class<? extends Forme> clazz,double dimension) throws Exception {
+//    return clazz.getConstructor(double.class).newInstance(dimension);
+//
+//}
 
 public interface FormeFactory {
-    public Forme getForme(double dimension);
-}
-*/
-
-    public static <T> Forme getForme(Class<? extends Forme> clazz, double dimension) {
-        try {
-            return clazz.getConstructor(double.class).newInstance(dimension);
-        } catch (InstantiationException e) {
-            throw new RuntimeException(e);
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException(e);
-        } catch (InvocationTargetException e) {
-            throw new RuntimeException(e);
-        } catch (NoSuchMethodException e) {
-            throw new RuntimeException(e);
-        }
-    }
+    Forme getForme(double dimension);
 }
