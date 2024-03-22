@@ -9,8 +9,8 @@ public abstract class CostumeDecorator implements Costume{
 
     @Override
     public String toString() {
-        return "CostumeDecorator{" +
-                "costume=" + costume +
-                '}';
+        StringBuilder builder = new StringBuilder();
+        builder.append(getDescription()).append(" - total = ").append(getPrix());
+        return builder.toString();
     }
 }

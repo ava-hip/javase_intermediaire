@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class Logger {
-    private static Logger instance;
+    private static volatile Logger instance;
 
     private ILogger log;
 
@@ -19,11 +19,11 @@ public class Logger {
                 case "file":
                     log = new FileLogger();
                     break;
-                default:
-                    log = new ConsoleLogger();
+                    default:
+                        log = new ConsoleLogger();
             }
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            log = new ConsoleLogger();
         }
     }
 
@@ -34,7 +34,7 @@ public class Logger {
         return instance;
     }
 
-    public void log(String message) {
+    public void log(String message) throws Exception {
         log.log(message);
     }
 

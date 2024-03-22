@@ -1,7 +1,7 @@
 package fr.dawan.creation.singleton;
 
 public class Pdg {
-    private static Pdg instance;
+    private volatile static Pdg instance;
 
     // volatile -> garanti que la variable est visible et manipulable au travers de plusieurs thread
     private String name;

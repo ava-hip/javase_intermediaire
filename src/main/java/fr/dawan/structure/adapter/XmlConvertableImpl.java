@@ -6,7 +6,7 @@ import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
 import java.io.IOException;
 
-public class XmlConvertableImpl<T> implements XmlConvertable<T>{
+public class XmlConvertableImpl<T> implements XmlConvertable<T> {
 
     @Override
     public String toXml(Object obj) throws JsonProcessingException {

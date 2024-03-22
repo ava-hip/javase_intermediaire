@@ -7,5 +7,8 @@ public class App {
 
         Voiture ferrari = new VoitureSportDecorator(new VoitureSimple());
         ferrari.assembler();
+
+        Voiture bentley = new VoitureLuxeDecorator(new VoitureSimple());
+        bentley.assembler();
     }
 }

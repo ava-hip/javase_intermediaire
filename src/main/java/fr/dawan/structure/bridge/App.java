@@ -5,6 +5,7 @@ public class App {
 
         BasicRemote remote = new BasicRemote();
         Device radio = new Radio();
+
         remote.setDevice(radio);
         remote.changeVolume(5);
         remote.changeChannel("TF1");

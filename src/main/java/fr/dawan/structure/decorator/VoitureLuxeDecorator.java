@@ -8,6 +8,6 @@ public class VoitureLuxeDecorator extends VoitureDecorator{
     @Override
     public void assembler() {
         super.assembler();
-        System.out.println("-- ajouter options luxe");
+        System.out.println("-- ajouter options luxe ---");
     }
 }

@@ -27,14 +27,14 @@ public class Reponse implements Cloneable {
 
     @Override
     public String toString() {
-        return "Reponse{" +
-                "text='" + text + '\'' +
-                ", correct=" + correct +
-                '}';
+        StringBuilder builder = new StringBuilder();
+        builder.append("Reponse [text=").append(text).append(", correct=").append(correct).append("]");
+        return builder.toString();
     }
 
     @Override
     public Object clone() throws CloneNotSupportedException {
         return super.clone();
     }
+
 }

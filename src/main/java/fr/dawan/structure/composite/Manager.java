@@ -13,6 +13,7 @@ public class Manager extends Employe{
     @Override
     public void afficher() {
         System.out.println(getNom());
+        System.out.println("________________");
         employes.forEach(e -> e.afficher());
     }
 

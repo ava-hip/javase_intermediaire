@@ -9,7 +9,7 @@ public class XmlToJsonAdapter<T> implements Target {
     private XmlConvertable xmlConverter;
     private Class<T> clazz;
 
-    public XmlToJsonAdapter(XmlConvertable xmlConverter, Class<T> clazz) {
+    public XmlToJsonAdapter(XmlConvertable<T> xmlConverter, Class<T> clazz) {
         this.xmlConverter = xmlConverter;
         this.clazz = clazz;
     }

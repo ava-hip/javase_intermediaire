@@ -9,11 +9,11 @@ public class Lunette extends CostumeDecorator{
 
     @Override
     public String getDescription() {
-        return costume.getDescription();
+        return costume.getDescription() + ", " + "lunettes";
     }
 
     @Override
     public double getPrix() {
-        return 0;
+        return costume.getPrix()+35.0;
     }
 }

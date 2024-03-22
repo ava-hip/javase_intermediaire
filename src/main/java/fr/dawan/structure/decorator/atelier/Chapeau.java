@@ -13,6 +13,6 @@ public class Chapeau extends CostumeDecorator{
 
     @Override
     public double getPrix() {
-        return costume.getPrix();
+        return costume.getPrix() + 15;
     }
 }

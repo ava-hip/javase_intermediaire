@@ -9,6 +9,6 @@ public class VoitureSportDecorator extends VoitureDecorator{
     @Override
     public void assembler() {
         super.assembler();
-        System.out.println("-- ajouter les options sports");
+        System.out.println("-- ajouter les options sports --");
     }
 }

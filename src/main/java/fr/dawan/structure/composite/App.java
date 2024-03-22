@@ -8,7 +8,10 @@ public class App {
         Consultant ace = new Consultant("Portgas D. Ace");
         Consultant barbeBlanche = new Consultant("Barbe Blanche");
 
-        shanks.afficher();
+        manager.ajoutEmploye(shanks);
+        manager.ajoutEmploye(ace);
+        manager.ajoutEmploye(barbeBlanche);
+        manager.afficher();
 
     }
 }

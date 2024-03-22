@@ -1,7 +1,8 @@
 package fr.dawan.structure.facade;
 
 public class AmplificateurSon {
-    public void amplifierSon(String fichier) {
-        System.out.println("Le son du fichier " + fichier + " est bien fort");
+    public void amplifier(String fichier) {
+
+        System.out.println("Now playing : '" + fichier + ".mp3'");
     }
 }

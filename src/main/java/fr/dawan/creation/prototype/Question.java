@@ -36,12 +36,16 @@ public class Question implements Cloneable {
     }
 
     @Override
-    public Object clone() throws CloneNotSupportedException {
-        Question question = (Question)super.clone();
-        question.reponses = new ArrayList<>();
-        for(Reponse reponse : reponses) {
-            question.reponses.add((Reponse)reponse.clone());
-        }
-        return question;
+    public  Object clone() throws CloneNotSupportedException {
+        Question q=(Question)super.clone();
+        q.reponses=reponses.stream().map(r -> {
+            try {
+                return (Reponse)r.clone();
+            } catch (CloneNotSupportedException e) {
+                throw new RuntimeException(e);
+            }
+        }).toList();
+        return q;
     }
+
 }

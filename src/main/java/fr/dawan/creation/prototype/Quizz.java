@@ -29,19 +29,20 @@ public class Quizz implements Cloneable{
 
     @Override
     public String toString() {
-        return "Quizz{" +
-                "titre='" + titre + '\'' +
-                ", questions=" + questions +
-                '}';
+        StringBuilder builder = new StringBuilder();
+        builder.append("Quiz [titre=").append(titre).append(", questions=").append(questions).append("]");
+        return builder.toString();
     }
 
     @Override
-    public Object clone() throws CloneNotSupportedException {
-        Quizz quizz = (Quizz)super.clone();
-        quizz.questions = new ArrayList<>();
-        for (Question question : questions) {
-            quizz.questions.add((Question)question.clone());
+    public Quizz clone() throws CloneNotSupportedException {
+        // TODO Auto-generated method stub
+        Quizz q=(Quizz)super.clone();
+        q.questions=new ArrayList<>();
+        for(Question question : questions) {
+            q.questions.add((Question)question.clone());
         }
-        return quizz;
+        return q;
     }
+
 }
