@@ -6,7 +6,7 @@ public class TriangleRectangle extends Rectangle {
     }
 
     @Override
-    public double calculSurface(Forme forme) {
-        return super.calculSurface(forme)/2;
+    public double calculSurface() {
+        return super.calculSurface()/2.0;
     }
 }

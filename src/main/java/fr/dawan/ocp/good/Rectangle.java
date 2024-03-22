@@ -1,6 +1,6 @@
 package fr.dawan.ocp.good;
 
-public class Rectangle extends CalculSurface {
+public class Rectangle implements Forme {
     private double largeur;
     private double longueur;
 
@@ -15,5 +15,10 @@ public class Rectangle extends CalculSurface {
 
     public double getLongueur() {
         return longueur;
+    }
+
+    @Override
+    public double calculSurface() {
+        return longueur*largeur;
     }
 }
