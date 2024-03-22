@@ -8,11 +8,6 @@ public class Oiseau implements AnimalAerien {
     }
 
     @Override
-    public void nager() {
-
-    }
-
-    @Override
     public void crier() {
 
     }
