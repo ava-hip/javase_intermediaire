@@ -3,18 +3,22 @@ package fr.dawan.structure.adapter;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class XmlToJsonAdapter<T> implements Target<T> {
-    private XmlConvertable<T> xmlConverter;
+import java.io.IOException;
 
-    public XmlToJsonAdapter(XmlConvertable<T> xmlConverter) {
+public class XmlToJsonAdapter<T> implements Target {
+    private XmlConvertable xmlConverter;
+    private Class<T> clazz;
+
+    public XmlToJsonAdapter(XmlConvertable xmlConverter, Class<T> clazz) {
         this.xmlConverter = xmlConverter;
+        this.clazz = clazz;
     }
 
     @Override
-    public String toJson(T obj) throws JsonProcessingException {
+    public String toJson(String xml) throws IOException {
+        Object obj = xmlConverter.fromXml(xml, clazz);
         ObjectMapper jsonMapper = new ObjectMapper();
-        // tring xml = xmlConverter.toXml(obj);
-        String json = jsonMapper.writeValueAsString(obj);
+        String json = jsonMapper.writeValueAsString(xml);
         return json;
     }
 }

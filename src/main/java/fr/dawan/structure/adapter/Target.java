@@ -2,6 +2,8 @@ package fr.dawan.structure.adapter;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 
-public interface Target<T> {
-    String toJson(T obj) throws JsonProcessingException;
+import java.io.IOException;
+
+public interface Target {
+    String toJson(String xml) throws IOException;
 }
